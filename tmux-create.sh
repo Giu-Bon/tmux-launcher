@@ -12,7 +12,7 @@ else
     echo "$sessions"
     read -p "Enter the name of an existing session to attach, or a new name to create one: " session_name
 
-    #Check if session exists - if true attach if false create one
+    #Check if session exists -- if the session with that name exists then attach if not create
     if echo "$sessions" | grep -q "^$session_name$"; then
         tmux attach-session -t "$session_name"
     else
